@@ -27,15 +27,6 @@ class ConditionerTest {
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
-//    @Test
-//    public void shouldDecreaseTemperatureAfterLimitUp() {
-//        Conditioner conditioner = new Conditioner();
-//        conditioner.setCurrentTemperature(33); // считаем, что начальное значение температуры выставляем кнопками на пульте
-//        conditioner.DecreaseCurrentTemperature(conditioner.getCurrentTemperature());
-//        var expected = 30;
-//        assertEquals(expected, conditioner.getCurrentTemperature());
-//    }
-
     @Test
     public void shouldDecreaseTemperatureAfterLimitDown() {
         conditioner.setMinTemperature(15);
@@ -70,7 +61,7 @@ class ConditionerTest {
     public void shouldIncreaseTemperatureAfterLimitUp() {
         conditioner.setMinTemperature(15);
         conditioner.setMaxTemperature(30);
-        conditioner.setCurrentTemperature(33);
+        conditioner.setCurrentTemperature(3333);
         conditioner.increaseCurrentTemperature();
         var expected = 30;
         assertEquals(expected, conditioner.getCurrentTemperature());
