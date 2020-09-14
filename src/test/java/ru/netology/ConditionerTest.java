@@ -12,7 +12,7 @@ class ConditionerTest {
         conditioner.setMinTemperature(15);
         conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(30);
-        conditioner.DecreaseCurrentTemperature();
+        conditioner.decreaseCurrentTemperature();
         var expected = 29;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
@@ -22,7 +22,7 @@ class ConditionerTest {
         conditioner.setMinTemperature(15);
         conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(16);
-        conditioner.DecreaseCurrentTemperature();
+        conditioner.decreaseCurrentTemperature();
         var expected = 15;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
@@ -41,7 +41,7 @@ class ConditionerTest {
         conditioner.setMinTemperature(15);
         conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(0);
-        conditioner.DecreaseCurrentTemperature();
+        conditioner.decreaseCurrentTemperature();
         var expected = 15;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
@@ -51,7 +51,7 @@ class ConditionerTest {
         conditioner.setMinTemperature(15);
         conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(29);
-        conditioner.IncreaseCurrentTemperature();
+        conditioner.increaseCurrentTemperature();
         var expected = 30;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
@@ -61,7 +61,7 @@ class ConditionerTest {
         conditioner.setMinTemperature(15);
         conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(15);
-        conditioner.IncreaseCurrentTemperature();
+        conditioner.increaseCurrentTemperature();
         var expected = 16;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
@@ -71,7 +71,7 @@ class ConditionerTest {
         conditioner.setMinTemperature(15);
         conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(33);
-        conditioner.IncreaseCurrentTemperature();
+        conditioner.increaseCurrentTemperature();
         var expected = 30;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
