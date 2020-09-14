@@ -5,21 +5,24 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConditionerTest {
+    Conditioner conditioner = new Conditioner();
 
     @Test
     public void shouldDecreaseTemperatureUnderLimitUp() {
-        Conditioner conditioner = new Conditioner();
+        conditioner.setMinTemperature(15);
+        conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(30);
-        conditioner.DecreaseCurrentTemperature(conditioner.getCurrentTemperature());
+        conditioner.DecreaseCurrentTemperature();
         var expected = 29;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
     @Test
     public void shouldDecreaseTemperatureUnderLimitDown() {
-        Conditioner conditioner = new Conditioner();
+        conditioner.setMinTemperature(15);
+        conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(16);
-        conditioner.DecreaseCurrentTemperature(conditioner.getCurrentTemperature());
+        conditioner.DecreaseCurrentTemperature();
         var expected = 15;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
@@ -35,36 +38,40 @@ class ConditionerTest {
 
     @Test
     public void shouldDecreaseTemperatureAfterLimitDown() {
-        Conditioner conditioner = new Conditioner();
+        conditioner.setMinTemperature(15);
+        conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(0);
-        conditioner.DecreaseCurrentTemperature(conditioner.getCurrentTemperature());
+        conditioner.DecreaseCurrentTemperature();
         var expected = 15;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
     @Test
     public void shouldIncreaseTemperatureUnderLimitUp() {
-        Conditioner conditioner = new Conditioner();
+        conditioner.setMinTemperature(15);
+        conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(29);
-        conditioner.IncreaseCurrentTemperature(conditioner.getCurrentTemperature());
+        conditioner.IncreaseCurrentTemperature();
         var expected = 30;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
     @Test
     public void shouldIncreaseTemperatureUnderLimitDown() {
-        Conditioner conditioner = new Conditioner();
+        conditioner.setMinTemperature(15);
+        conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(15);
-        conditioner.IncreaseCurrentTemperature(conditioner.getCurrentTemperature());
+        conditioner.IncreaseCurrentTemperature();
         var expected = 16;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
     @Test
     public void shouldIncreaseTemperatureAfterLimitUp() {
-        Conditioner conditioner = new Conditioner();
-        conditioner.setCurrentTemperature(30);
-        conditioner.IncreaseCurrentTemperature(conditioner.getCurrentTemperature());
+        conditioner.setMinTemperature(15);
+        conditioner.setMaxTemperature(30);
+        conditioner.setCurrentTemperature(33);
+        conditioner.IncreaseCurrentTemperature();
         var expected = 30;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
