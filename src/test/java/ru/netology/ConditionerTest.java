@@ -63,7 +63,7 @@ class ConditionerTest {
         conditioner.setMaxTemperature(30);
         conditioner.setCurrentTemperature(3333);
         conditioner.increaseCurrentTemperature();
-        var expected = 30;
+        var expected = 1;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 }
