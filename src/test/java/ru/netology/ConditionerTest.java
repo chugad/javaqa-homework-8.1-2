@@ -66,4 +66,14 @@ class ConditionerTest {
         var expected = 1;
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
+    
+    @Test
+    public void shouldIncreaseTemperatureAfterLimitDown() {
+        conditioner.setMinTemperature(15);
+        conditioner.setMaxTemperature(30);
+        conditioner.setCurrentTemperature(-3333);
+        conditioner.increaseCurrentTemperature();
+        var expected = 1;
+        assertEquals(expected, conditioner.getCurrentTemperature());
+    }
 }
